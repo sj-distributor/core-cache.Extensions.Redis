@@ -1,1 +1,1 @@
-# core-cache.Extensions.Redis
+# NetCoreCache.Extensions.Redis

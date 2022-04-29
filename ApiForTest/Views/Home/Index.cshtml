@@ -1,0 +1,14 @@
+@model  ApiForTest.Entity.WeatherForecast[]
+
+@{
+   
+}
+
+<h2>title</h2>
+@foreach (var item in Model)
+{
+    <h2>@item.Summary</h2> 
+    <h2>@item.TemperatureC</h2> 
+    <h2>@item.TemperatureF</h2> 
+    <h2>@item.Date.ToString()</h2> 
+}

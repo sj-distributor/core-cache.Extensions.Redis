@@ -1,0 +1,7 @@
+.idea
+.idea/*
+.idea/workspace.xml
+*.xml
+bin
+obj
+*/.idea/*
