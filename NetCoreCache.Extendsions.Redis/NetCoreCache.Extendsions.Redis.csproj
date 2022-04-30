@@ -3,11 +3,13 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <PackageId>NetCoreCacheRedis</PackageId>
+        <Authors>Anson.G</Authors>
+        <Company>Wiltechs</Company>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="NetCoreCache" Version="1.0.4" />
+      <PackageReference Include="NetCoreCache" Version="1.0.5" />
       <PackageReference Include="NewLife.Redis" Version="4.0.2022.401" />
     </ItemGroup>
 

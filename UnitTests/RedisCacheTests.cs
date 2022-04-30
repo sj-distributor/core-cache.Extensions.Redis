@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using Core.Driver;
 using NetCoreCache.Extendsions.Redis.Extendsions;
 using Xunit;
 
