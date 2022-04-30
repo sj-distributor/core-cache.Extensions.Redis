@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/sj-distributor/core-cache.Extensions.Redis/actions/workflows/dotnet.yml/badge.svg?branch=main)](https://github.com/sj-distributor/core-cache.Extensions.Redis/actions?query=branch%3Amain)
 [![codecov](https://codecov.io/gh/sj-distributor/core-cache.Extensions.Redis/branch/main/graph/badge.svg?token=XV3W873RGV)](https://codecov.io/gh/sj-distributor/core-cache.Extensions.Redis)
-[![NuGet version (NetCoreCache)](https://img.shields.io/nuget/v/NetCoreCache.svg?style=flat-square)](https://www.nuget.org/packages/NetCoreCacheRedis/)
+[![NuGet version (NetCoreCache)](https://img.shields.io/nuget/v/NetCoreCacheRedis.svg?style=flat-square)](https://www.nuget.org/packages/NetCoreCacheRedis/)
 ![](https://img.shields.io/badge/license-MIT-green)
 
 ## 🔥Core Api And MVC Cache🔥
