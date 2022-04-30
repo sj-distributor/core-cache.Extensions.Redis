@@ -7,8 +7,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="NetCoreCache" Version="1.0.2" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\NetCoreCache.Extendsions.Redis\NetCoreCache.Extendsions.Redis.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 using Core;
+using NetCoreCache.Extendsions.Redis;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -10,7 +11,7 @@ JsonConvert.DefaultSettings = () => new JsonSerializerSettings()
 };
 
 // 添加缓存依赖
-builder.Services.AddCoreCache();
+builder.Services.AddNetCoreCacheRedis("server=127.0.0.1:6379,db=0;timeout=5000;MaxMessageSize=1024000;Expire=3600");
 
 // Add services to the container.
 builder.Services.AddControllers();

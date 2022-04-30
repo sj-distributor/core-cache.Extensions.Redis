@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NetCoreCache" Version="1.0.4" />
+      <PackageReference Include="NewLife.Redis" Version="4.0.2022.401" />
+    </ItemGroup>
+
 </Project>
