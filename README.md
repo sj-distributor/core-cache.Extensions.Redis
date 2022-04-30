@@ -8,11 +8,12 @@
 ## 🔥Core Api And MVC Cache🔥
 
 * Integrate into Redis for API and MVC caching
-* Fast, concurrent, evicted memory 
+* Fast, concurrent, evicted memory
 
-## [NetCoreCache( MemoryCache )](https://github.com/sj-distributor/core-cache) 👈🏻👈🏻 
+## [NetCoreCache( Big MemoryCache )](https://github.com/sj-distributor/core-cache) 👈🏻👈🏻
 
 ## 🤟 Install
+
 ```
 PM     : Install-Package NetCoreCacheRedis
 Net CLI: dotnet add package NetCoreCacheRedis
@@ -20,7 +21,7 @@ Net CLI: dotnet add package NetCoreCacheRedis
 
 ## 🚀 Quick start
 
-```
+```C#
 // Program.cs
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddNetCoreCacheRedis("server=localhost:6379;timeout=5000;MaxMessageSize=1024000;Expire=3600");
@@ -41,20 +42,20 @@ public class UserController : ControllerBase
 ```
 
 ## 📌 Redis cluster
+
+`builder.Services.AddNetCoreCacheRedis("server=127.0.0.1:6000,127.0.0.1:7000,127.0.0.1:6379;db=3;timeout=7000")`
+
 ```
 This Redis component supports Redis Cluster, configure any node address, 
 it will be able to automatically discover other addresses and slot distribution,
 and use the correct node when performing read and write operations.
 
 This Redis component does not directly support the Redis sentinel, but supports it in the form of active-standby failover.
-
-builder.Services.AddNetCoreCacheRedis("server=127.0.0.1:6000,127.0.0.1:7000,127.0.0.1:6379;db=3;timeout=7000");
-
 ```
 
 ## Cache automatic eviction
 
-```
+```C#
 // UserController.cs
 [ApiController]
 [Route("[controller]")]
@@ -72,7 +73,7 @@ public class UserController : ControllerBase
 
 ## Active cache eviction
 
-```
+```C#
 // UserController.cs
 [ApiController]
 [Route("[controller]")]
@@ -97,30 +98,30 @@ public class UserController : ControllerBase
 
 ```
 
-## ⭐️⭐️️ Match both uses ⭐️⭐️
+## 👻 Match both uses
 
-```
-    **** ‼️ If the cache is hit, 'Evicting' will only be executed once ‼️ ****
-    
-    [Route("/evict-and-cache"), HttpGet]
-    [Caching(typeof(Cacheable), "anson", "QueryId:{id}")]
-    [Evicting(typeof(CacheEvict), new[] { "anything" }, "QueryId:{id}")]
-    public IEnumerable<WeatherForecast> Get([FromQuery] string id)
-    {
-        return DataUtils.GetData();
-    }
-    
-    
-    
-    **** ‼️ Evicting will always execute ‼️ ****
-    
-    [Route("/evict-and-cache"), HttpGet]
-    [Evicting(typeof(CacheEvict), new[] { "anything" }, "QueryId:{id}")]
-    [Caching(typeof(Cacheable), "anson", "QueryId:{id}")]
-    public IEnumerable<WeatherForecast> Get([FromQuery] string id)
-    {
-        return DataUtils.GetData();
-    }
+```C#
+**** ‼️ If the cache is hit, 'Evicting' will only be executed once ‼️ ****
+
+[Route("/evict-and-cache"), HttpGet]
+[Caching(typeof(Cacheable), "anson", "QueryId:{id}")]
+[Evicting(typeof(CacheEvict), new[] { "anything" }, "QueryId:{id}")]
+public IEnumerable<WeatherForecast> Get([FromQuery] string id)
+{
+    return DataUtils.GetData();
+}
+
+
+
+**** ‼️ Evicting will always execute ‼️ ****
+
+[Route("/evict-and-cache"), HttpGet]
+[Evicting(typeof(CacheEvict), new[] { "anything" }, "QueryId:{id}")]
+[Caching(typeof(Cacheable), "anson", "QueryId:{id}")]
+public IEnumerable<WeatherForecast> Get([FromQuery] string id)
+{
+    return DataUtils.GetData();
+}
 ```
 
 ## Variable explanation

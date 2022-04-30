@@ -1,6 +1,6 @@
 using Core.Driver;
 
-namespace NetCoreCache.Extendsions.Redis.Extendsions;
+namespace NetCoreCache.Extendsions.Redis.Driver;
 
 public class RedisCache : ICacheClient
 {

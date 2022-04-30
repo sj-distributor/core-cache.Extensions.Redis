@@ -1,6 +1,6 @@
 using Core.Driver;
 using Microsoft.Extensions.DependencyInjection;
-using NetCoreCache.Extendsions.Redis.Extendsions;
+using NetCoreCache.Extendsions.Redis.Driver;
 
 namespace NetCoreCache.Extendsions.Redis;
 

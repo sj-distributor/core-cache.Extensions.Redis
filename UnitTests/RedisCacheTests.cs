@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using NetCoreCache.Extendsions.Redis.Extendsions;
+using NetCoreCache.Extendsions.Redis.Driver;
 using Xunit;
 
 namespace UnitTests;
@@ -18,7 +18,7 @@ public class RedisCacheTests
     [Theory]
     [InlineData("anson", "18", "18")]
     [InlineData("anson1", "19", "19")]
-    public async void TestMemoryCacheCanSet(string key, string value, string result)
+    public async void TestRedisCacheCanSet(string key, string value, string result)
     {
         await _redisClient.Set(key, value);
         var s = await _redisClient.Get(key);
@@ -28,7 +28,7 @@ public class RedisCacheTests
     [Theory]
     [InlineData("key1", "18", "", TimeSpan.TicksPerSecond * 1)]
     [InlineData("key2", "19", "", TimeSpan.TicksPerSecond * 1)]
-    public async void TestMemoryCacheCanSetTimeout(string key, string value, string result, long expire = 0)
+    public async void TestRedisCacheCanSetTimeout(string key, string value, string result, long expire = 0)
     {
         await _redisClient.Set(key, value, expire);
 
@@ -41,7 +41,7 @@ public class RedisCacheTests
     [Theory]
     [InlineData("anson", "18", "")]
     [InlineData("anson1", "19", "")]
-    public async void TestMemoryCacheCanDelete(string key, string value, string result)
+    public async void TestRedisCacheCanDelete(string key, string value, string result)
     {
         await _redisClient.Set(key, value);
         await _redisClient.Delete(key);
@@ -52,7 +52,7 @@ public class RedisCacheTests
     [Theory]
     [InlineData("anson1111", "18", "")]
     [InlineData("anson2222", "19", "")]
-    public async void TestMemoryCacheCanDeleteByPattern(string key, string value, string result)
+    public async void TestRedisCacheCanDeleteByPattern(string key, string value, string result)
     {
         await _redisClient.Set(key, value);
         await _redisClient.Delete("anson*");
