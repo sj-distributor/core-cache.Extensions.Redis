@@ -17,8 +17,8 @@ public class WeatherForecastController : ControllerBase
     }
 
     [Route("/evict-and-cache"), HttpGet]
-    [Caching(typeof(Cacheable), "anson", "QueryId:{id}")]
     [Evicting(typeof(CacheEvict), new[] { "anything" }, "QueryId:{id}")]
+    [Caching(typeof(Cacheable), "anson", "QueryId:{id}")]
     public IEnumerable<WeatherForecast> Get2([FromQuery] string id)
     {
         return DataUtils.GetData();

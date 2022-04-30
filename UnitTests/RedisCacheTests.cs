@@ -13,7 +13,7 @@ public class RedisCacheTests
 
     public RedisCacheTests()
     {
-        _redisClient = new RedisCache("server=127.0.0.1:6379,db=0;timeout=5000;MaxMessageSize=1024000;Expire=3600");
+        _redisClient = new RedisCache("server=localhost:6379;timeout=5000;MaxMessageSize=1024000;Expire=3600");
     }
 
     [Theory]

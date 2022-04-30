@@ -79,7 +79,7 @@ jobs:
       - name: Set up Redis
         uses: supercharge/redis-github-action@1.4.0
         with:
-          redis-version: 5
+          redis-version: 6
           
       - name: Run tests
         run: dotnet test --configuration=Release -p:Platform="Any CPU" --collect:"XPlat Code Coverage"

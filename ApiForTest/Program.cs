@@ -11,7 +11,7 @@ JsonConvert.DefaultSettings = () => new JsonSerializerSettings()
 };
 
 // 添加缓存依赖
-builder.Services.AddNetCoreCacheRedis("server=127.0.0.1:6379,db=0;timeout=5000;MaxMessageSize=1024000;Expire=3600");
+builder.Services.AddNetCoreCacheRedis("server=localhost:6379;timeout=5000;MaxMessageSize=1024000;Expire=3600");
 
 // Add services to the container.
 builder.Services.AddControllers();

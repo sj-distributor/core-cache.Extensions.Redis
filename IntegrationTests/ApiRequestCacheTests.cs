@@ -39,7 +39,7 @@ public class ApiRequestCacheTests : IClassFixture<WebApplicationFactory<Program>
         var resp1 = await _httpClient.GetAsync("/?id=2");
         var result1 = await resp1.Content.ReadAsStringAsync();
 
-        await Task.Delay(TimeSpan.FromSeconds(3));
+        await Task.Delay(TimeSpan.FromSeconds(4));
         
         var resp2 = await _httpClient.GetAsync("/?id=2");
         var result2 = await resp2.Content.ReadAsStringAsync();
