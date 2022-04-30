@@ -7,11 +7,10 @@
 
 ## 🔥Core Api And MVC Cache🔥
 
-* Easy use of Redis caching with dotnet core
-* Fast, concurrent, evicting in-memory cache written to keep big number of entries without impact on performance.
-* The cache consists of many buckets, each with its own lock. This helps scaling the performance on multi-core CPUs, since multiple CPUs may concurrently access distinct buckets.
+* Integrate into Redis for API and MVC caching
+* Fast, concurrent, evicted memory 
 
-## [NetCoreCache( MemoryCache )](https://github.com/sj-distributor/core-cache)
+## [NetCoreCache( MemoryCache )](https://github.com/sj-distributor/core-cache) 👈🏻👈🏻 
 
 ## 🤟 Install
 ```
