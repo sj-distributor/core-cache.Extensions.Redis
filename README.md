@@ -10,7 +10,7 @@
 * Integrate into Redis for API and MVC caching
 * Fast, concurrent, evicted memory
 
-## [NetCoreCache( Big MemoryCache )](https://github.com/sj-distributor/core-cache) 👈🏻👈🏻
+## [NetCoreCache( MemoryCache )](https://github.com/sj-distributor/core-cache) 👈🏻👈🏻
 
 ## 🤟 Install
 
