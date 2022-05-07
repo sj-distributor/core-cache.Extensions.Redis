@@ -26,7 +26,7 @@ public class RedisCache : ICacheClient
         if (hasKey) return ValueTask.CompletedTask;
         if (expire > 0)
         {
-            _redisClient.Add(key, value, (int)(expire / 10000000));
+            _redisClient.Add(key, value, (int)(expire));
         }
         else
         {
@@ -48,7 +48,7 @@ public class RedisCache : ICacheClient
         {
             if (key.First() == '*')
             {
-                key = key.Substring(1, key.Length);
+                key = key.Substring(1, key.Length - 1);
             }
             else if (key.Last() == '*')
             {

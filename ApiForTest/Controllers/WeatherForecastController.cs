@@ -10,7 +10,7 @@ namespace ApiForTest.Controllers;
 public class WeatherForecastController : ControllerBase
 {
     [Route("/"), HttpGet]
-    [Caching(typeof(Cacheable), "anything", "QueryId:{id}", TimeSpan.TicksPerSecond * 2)]
+    [Caching(typeof(Cacheable), "anything", "QueryId:{id}",  2)]
     public IEnumerable<WeatherForecast> Get([FromQuery] string id)
     {
         return DataUtils.GetData();

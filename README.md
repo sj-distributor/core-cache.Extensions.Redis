@@ -62,7 +62,7 @@ This Redis component does not directly support the Redis sentinel, but supports 
 public class UserController : ControllerBase
 {
     [Route("/"), HttpGet]
-    [Caching(typeof(Cacheable), "user", "{id}", TimeSpan.TicksPerSecond * 2)] // Cache expires after two seconds
+    [Caching(typeof(Cacheable), "user", "{id}", 2)] // Cache expires after two seconds
     public User Get([FromQuery] string id)
     {
         return DataUtils.GetData();
@@ -80,7 +80,7 @@ public class UserController : ControllerBase
 public class UserController : ControllerBase
 {
     [Route("/"), HttpGet]
-    [Caching(typeof(Cacheable), "user", "{id}", TimeSpan.TicksPerHour * 2)] // Cache expires after two hours
+    [Caching(typeof(Cacheable), "user", "{id}", 2)] // Cache expires after two seconds
     public User Get([FromQuery] string id)
     {
         return DataUtils.GetData();
@@ -104,7 +104,7 @@ public class UserController : ControllerBase
 **** ‼️ If the cache is hit, 'Evicting' will only be executed once ‼️ ****
 
 [Route("/evict-and-cache"), HttpGet]
-[Caching(typeof(Cacheable), "anson", "QueryId:{id}")]
+[Caching(typeof(Cacheable), "anson", "QueryId:{id}")] // Long term cache
 [Evicting(typeof(CacheEvict), new[] { "anything" }, "QueryId:{id}")]
 public IEnumerable<WeatherForecast> Get([FromQuery] string id)
 {

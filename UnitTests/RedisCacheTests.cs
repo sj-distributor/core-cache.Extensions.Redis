@@ -26,8 +26,8 @@ public class RedisCacheTests
     }
 
     [Theory]
-    [InlineData("key1", "18", "", TimeSpan.TicksPerSecond * 1)]
-    [InlineData("key2", "19", "", TimeSpan.TicksPerSecond * 1)]
+    [InlineData("key1", "18", "", 1)]
+    [InlineData("key2", "19", "", 1)]
     public async void TestRedisCacheCanSetTimeout(string key, string value, string result, long expire = 0)
     {
         await _redisClient.Set(key, value, expire);

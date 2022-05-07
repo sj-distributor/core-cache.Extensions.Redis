@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="NetCoreCache" Version="1.2.2" />
+      <PackageReference Include="NetCoreCache" Version="1.2.4" />
       <PackageReference Include="NewLife.Redis" Version="4.0.2022.401" />
     </ItemGroup>
 
