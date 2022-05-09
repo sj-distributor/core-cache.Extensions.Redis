@@ -24,8 +24,8 @@ Net CLI: dotnet add package NetCoreCacheRedis
 ```C#
 // Program.cs
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddNetCoreCacheRedis("server=localhost:6379;timeout=5000;MaxMessageSize=1024000;Expire=3600");
-
+builder.Services.AddNetCoreCacheRedis("server=localhost:6379;timeout=5000;MaxMessageSize=1024000;Expire=3600", canGetRedisClient: true); // canGetRedisClient = true => get redisClient instance
+// var redisClient = serviceProvider.GetService<ICacheClient>();
 
 // UserController.cs
 [ApiController]
